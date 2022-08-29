@@ -1,0 +1,11 @@
+[
+    {
+        "command": "startstream (mode=[music|game])",
+        "description": "Initializes the bot for stream. Optionally, the bot can initialized in 'game' mode, or 'music' (default) mode"
+    },
+    {
+        "command": "mode [music|game]",
+        "description": "Sets the bot operation mode. Game mode will disable the bump system and other music related features"
+    }
+
+]

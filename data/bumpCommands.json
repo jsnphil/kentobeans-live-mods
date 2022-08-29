@@ -1,0 +1,24 @@
+[{
+    "command": "bump [user]",
+    "description": "Bumps the request of a given user. Song is placed at top of queue or below already bumped songs"
+},
+{
+    "command": "bump [user] [position]",
+    "description": "Bumps the request of a given user to the indicated position in the queue"
+},
+{
+    "command": "removebump [user]",
+    "description": "Transfers a bump, or pending bump, from user 1 to user 2. "
+},
+{
+    "command": "bumpxfer [user1] [user2]",
+    "description": "Bumps the request of a given user. Song is placed at top of queue or below already bumped songs"
+},
+{
+    "command": "autobump [enable|disable]",
+    "description": "Enables or disables the auto-bump system"
+},
+{
+    "command": "resetbumps",
+    "description": "Resets all bump data, excluding user bump limits"
+}]

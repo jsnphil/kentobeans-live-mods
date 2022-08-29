@@ -38,3 +38,45 @@ html{overflow-y: scroll;}
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+#menuTop{padding-top: 20px;}
+
+.innerContainer{
+	display: inline-block;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.button {
+	cursor: pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.buttonMenu{
+	font-size: 18px;
+	font-weight: bold;
+	color: #0E1336;
+	letter-spacing: 1px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 2px solid #0E1336;
+	display: inline-block;
+	padding: 0px;
+	width: 245px;
+	height: 32px;
+	line-height: 28px;
+	float: left;
+}
+
+.buttonMenu:hover{
+	color: #F57E20;
+	border: 2px solid #F57E20;
+}

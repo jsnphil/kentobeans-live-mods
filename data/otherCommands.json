@@ -1,0 +1,23 @@
+[
+    {
+        "command": "beans add [user] [amount]",
+        "description": "Adds the given amount of beans to a given user"
+    },
+    {
+        "command": "raidcall",
+        "description": "Displays the standard, non-subcribed raidcall"
+    },
+    {
+        "command": "subcall",
+        "description": "Displays the subcriber raidcall"
+    },
+
+    {
+        "command": "oops",
+        "description": "Increment the dropped stick counter"
+    },
+    {
+        "command": "rip",
+        "description": "Increment the broken stick counter"
+    }
+]

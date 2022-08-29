@@ -1,0 +1,31 @@
+[{
+    "command": "musicplayer togglesr",
+    "description": "Turns song player on or off"
+},{
+    "command": "sr user [user] [link]",
+    "description": "Adds a song into the queue on behalf of a user"
+},{
+    "command": "edit user [user] [link]",
+    "description": "Edits a user's request with a new link"
+},{
+    "command": "move [user] [position]",
+    "description": "Moves a user's request in the queue. This does not count against a user's bump limits"
+},{
+    "command": "removesong user [user]",
+    "description": "Removes a user's song from the queue"
+},{
+    "command": "save",
+    "description": "Saves the current song to the #music-discovery channel in Discord"
+},{
+    "command": "save [position]",
+    "description": "Saves the song at the given position to the #music-discovery channel in Discord"
+},{
+    "command": "toggleshuffle",
+    "description": "Turns the shuffle system on or off"
+},{
+    "command": "startshuffle",
+    "description": "Opens a new shuffle with the keyworkd 'join'. Shuffle will run for 1 minute"
+},{
+    "command": "shuffle buffer [buffer]",
+    "description": "Set the number of songs that must be played before a user can rejoin a shuffle after their song is played"
+}]

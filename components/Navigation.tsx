@@ -3,8 +3,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from '../public/logo.png';
 import Image from 'next/image';
 import { Nav, NavDropdown } from 'react-bootstrap';
+import { signOut, useSession } from 'next-auth/react';
 
 function Navigation() {
+  const { data: session } = useSession();
+
   return (
     <>
       <Navbar id='navbar' bg='dark' variant='dark'>
@@ -20,14 +23,14 @@ function Navigation() {
               // placeholder="blur" // Optional blur-up while loading
             />
           </Navbar.Brand>
-          <Navbar.Toggle id='navbarToggle' aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse id='basic-navbar-nav'>
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
               <Nav.Link href='/'>Home</Nav.Link>
               <Nav.Link href='commands' id='commandsLink'>
                 Bot Commands
               </Nav.Link>
-              <Nav.Link href='#link' id='sotnLink'>
+              <Nav.Link href='sotn' id='sotnLink'>
                 Song of the Night
               </Nav.Link>
               <Nav.Link href='#link' id='botControlsLink'>
@@ -45,6 +48,19 @@ function Navigation() {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+          </Navbar.Collapse>
+          <Navbar.Collapse className='justify-content-end'>
+            <Navbar.Text>
+              <img src={session?.user?.image!} width='30px' height={30} />
+              {'  '}
+              {session?.user?.name}
+            </Navbar.Text>
+            <Navbar.Text>
+              {
+                // TODO Replace with a Font Awesome unlock icon
+                <button onClick={() => signOut()}>Sign Out</button>
+              }
+            </Navbar.Text>
           </Navbar.Collapse>
         </Container>
       </Navbar>

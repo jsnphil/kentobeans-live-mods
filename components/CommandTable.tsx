@@ -13,9 +13,10 @@ interface CommandProps {
 }
 
 const CommandTable: React.FC<CommandProps> = ({ commands }) => {
+  let index = 0;
   const CommandData = commands.map((command: BotCommand) => {
     return (
-      <tr>
+      <tr key={++index}>
         <td>!{command.command}</td>
         <td>{command.description}</td>
       </tr>
@@ -31,7 +32,7 @@ const CommandTable: React.FC<CommandProps> = ({ commands }) => {
             <th>Description</th>
           </tr>
         </thead>
-        <tbody>{CommandData}</tbody>
+        <tbody key=''>{CommandData}</tbody>
       </Table>
     </Row>
   );

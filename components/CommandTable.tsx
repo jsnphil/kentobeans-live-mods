@@ -24,7 +24,7 @@ const CommandTable: React.FC<CommandProps> = ({ commands }) => {
   });
 
   return (
-    <Row mb-5>
+    <Row mt-5='true' mb-5='true'>
       <Table striped>
         <thead>
           <tr>
@@ -32,7 +32,7 @@ const CommandTable: React.FC<CommandProps> = ({ commands }) => {
             <th>Description</th>
           </tr>
         </thead>
-        <tbody key=''>{CommandData}</tbody>
+        <tbody>{CommandData}</tbody>
       </Table>
     </Row>
   );

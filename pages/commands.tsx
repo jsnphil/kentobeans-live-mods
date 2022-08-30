@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { Row, Table } from 'react-bootstrap';
 import styles from '../styles/Home.module.css';
 import CommandTable from '../components/CommandTable';
@@ -9,79 +9,67 @@ import OtherCommands from '../data/otherCommands.json';
 import BotCommands from '../data/botCommands.json';
 
 const Commands: NextPage = () => {
-  const [queueMgmtCmds, setQueueMgmtCmds] = useState(true);
-  const [bumpSystemCmds, setBumpSystemCmds] = useState(false);
-  const [botMgmtCmds, setBotMgmtCmds] = useState(false);
-  const [otherCmds, setOtherCmds] = useState(false);
-
-  const queueMgmtCmdsHandler = () => {
-    setQueueMgmtCmds(true);
-    setBumpSystemCmds(false);
-    setBotMgmtCmds(false);
-    setOtherCmds(false);
-  };
-
-  const bumpCmdsHandler = () => {
-    setQueueMgmtCmds(false);
-    setBumpSystemCmds(true);
-    setBotMgmtCmds(false);
-    setOtherCmds(false);
-  };
-
-  const botMgmtCmdsHandler = () => {
-    setQueueMgmtCmds(false);
-    setBumpSystemCmds(false);
-    setBotMgmtCmds(true);
-    setOtherCmds(false);
-  };
-
-  const otherCmdsHandler = () => {
-    setQueueMgmtCmds(false);
-    setBumpSystemCmds(false);
-    setBotMgmtCmds(false);
-    setOtherCmds(true);
-  };
-
-  BumpCommands;
+  const [commandState, setCommandState] = useState('queueMgmtCmds');
 
   return (
     <div className={styles.container}>
       <main>
         {' '}
-        <div id='menuTop' className='innerContainer'>
-          <div
-            id='queueMgmt'
-            className='button buttonMenu leftButtonA selected'
-            onClick={queueMgmtCmdsHandler}
-          >
-            Queue Management
-          </div>
-          <div
-            id='bumpSystem'
-            className='button buttonMenu midButton'
-            onClick={bumpCmdsHandler}
-          >
-            Bump System
-          </div>
-          <div
-            id='botMgmt'
-            className='button buttonMenu midButton'
-            onClick={botMgmtCmdsHandler}
-          >
-            Bot Management
-          </div>
-          <div
-            id='other'
-            className='button buttonMenu rightButtonA'
-            onClick={otherCmdsHandler}
-          >
-            Other
+        <div className='container mb-5 d-flex aligns-items-center justify-content-center'>
+          <div id='menuTop' className='innerContainer'>
+            <button
+              name='queueMgmtCmds'
+              className={`button buttonMenu leftButtonA ${
+                commandState === 'queueMgmtCmds' ? 'selected' : ''
+              }`}
+              onClick={(e) => {
+                setCommandState('queueMgmtCmds');
+              }}
+            >
+              Queue Management
+            </button>
+            <button
+              className={`button buttonMenu midButton ${
+                commandState === 'bumpCmds' ? 'selected' : ''
+              }`}
+              onClick={(e) => {
+                setCommandState('bumpCmds');
+              }}
+            >
+              Bump System
+            </button>
+            <button
+              className={`button buttonMenu midButton ${
+                commandState === 'botCmds' ? 'selected' : ''
+              }`}
+              onClick={(e) => {
+                setCommandState('botCmds');
+              }}
+            >
+              Bot Management
+            </button>
+            <button
+              className={`button buttonMenu rightButtonA ${
+                commandState === 'otherCmds' ? 'selected' : ''
+              }`}
+              onClick={(e) => {
+                setCommandState('otherCmds');
+              }}
+            >
+              Other{' '}
+            </button>
           </div>
         </div>
-        {queueMgmtCmds && <CommandTable commands={QueueCommands} />}
-        {bumpSystemCmds && <CommandTable commands={BumpCommands} />}
-        {botMgmtCmds && <CommandTable commands={BotCommands} />}
-        {otherCmds && <CommandTable commands={OtherCommands} />}
+        {commandState === 'queueMgmtCmds' && (
+          <CommandTable commands={QueueCommands} />
+        )}
+        {commandState === 'bumpCmds' && (
+          <CommandTable commands={BumpCommands} />
+        )}
+        {commandState === 'botCmds' && <CommandTable commands={BotCommands} />}
+        {commandState === 'otherCmds' && (
+          <CommandTable commands={OtherCommands} />
+        )}
       </main>
     </div>
   );

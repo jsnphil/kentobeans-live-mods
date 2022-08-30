@@ -41,6 +41,12 @@ html{overflow-y: scroll;}
 
 #menuTop{padding-top: 20px;}
 
+#container{
+	width: 1000px;
+	display: inline-block;
+	text-align: center;
+}
+
 .innerContainer{
 	display: inline-block;
 	text-align: center;
@@ -51,6 +57,7 @@ html{overflow-y: scroll;}
 
 .button {
 	cursor: pointer;
+	background-color: #CCCCCC;
 	-webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -78,5 +85,38 @@ html{overflow-y: scroll;}
 
 .buttonMenu:hover{
 	color: #F57E20;
-	border: 2px solid #F57E20;
+	/* border: 2px solid #F57E20; */
+}
+
+
+.leftButtonA{
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.rightButtonA{
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-left: 0px;
+	margin-left: -2px;
+}
+
+.leftButtonB{
+	border-bottom-left-radius: 8px;
+}
+
+.rightButtonB{
+	border-bottom-right-radius: 8px;
+	border-left: 0px;
+	margin-left: -2px;
+}
+
+.midButton{
+	border-left: 0px;
+	margin-left: -2px;
+}
+
+.selected{
+	background-color: #0E1336;
+	color: #FFFFFF;
 }

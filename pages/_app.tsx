@@ -25,6 +25,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
               integrity='sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor'
               crossOrigin='anonymous'
             />
+            <link
+              href='https://fonts.googleapis.com/css2?family=MavenPro&display=optional'
+              rel='stylesheet'
+            />
           </Head>
           <Container>
             <Component {...pageProps} />

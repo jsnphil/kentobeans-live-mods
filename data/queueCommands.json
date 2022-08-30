@@ -24,7 +24,7 @@
     "description": "Turns the shuffle system on or off"
 },{
     "command": "startshuffle",
-    "description": "Opens a new shuffle with the keyworkd 'join'. Shuffle will run for 1 minute"
+    "description": "Opens a new shuffle with the keyword 'join'. Shuffle will run for 1 minute"
 },{
     "command": "shuffle buffer [buffer]",
     "description": "Set the number of songs that must be played before a user can rejoin a shuffle after their song is played"

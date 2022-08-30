@@ -4,6 +4,7 @@ import logo from '../public/logo.png';
 import Image from 'next/image';
 import { Nav, NavDropdown } from 'react-bootstrap';
 import { signOut, useSession } from 'next-auth/react';
+import UserNavItem from './UserNavItem';
 
 function Navigation() {
   const { data: session } = useSession();
@@ -50,17 +51,7 @@ function Navigation() {
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className='justify-content-end'>
-            <Navbar.Text>
-              <img src={session?.user?.image!} width='30px' height={30} />
-              {'  '}
-              {session?.user?.name}
-            </Navbar.Text>
-            <Navbar.Text>
-              {
-                // TODO Replace with a Font Awesome unlock icon
-                <button onClick={() => signOut()}>Sign Out</button>
-              }
-            </Navbar.Text>
+            <UserNavItem />
           </Navbar.Collapse>
         </Container>
       </Navbar>

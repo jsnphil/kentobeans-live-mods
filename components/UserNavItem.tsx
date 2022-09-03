@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUnlock, faLock } from '@fortawesome/free-solid-svg-icons';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { Navbar } from 'react-bootstrap';
+import { Button, Navbar, NavDropdown } from 'react-bootstrap';
 
 function UserNavItem() {
   const { data: session } = useSession();
@@ -9,13 +11,15 @@ function UserNavItem() {
       <>
         <Navbar.Text>
           <img src={session?.user?.image!} width='30px' height={30} />
-          {'  '}
+          &nbsp;
           {session?.user?.name}
+          &nbsp;
         </Navbar.Text>
         <Navbar.Text>
           {
-            // TODO Replace with a Font Awesome unlock icon
-            <button onClick={() => signOut()}>Sign Out</button>
+            <Button variant='secondary' onClick={() => signOut()}>
+              Logout <FontAwesomeIcon icon={faUnlock} />
+            </Button>
           }
         </Navbar.Text>
       </>
@@ -24,7 +28,10 @@ function UserNavItem() {
 
   return (
     <>
-      <button onClick={() => signIn()}>Login</button>
+      <Button variant='secondary' onClick={() => signIn()}>
+        {' '}
+        Login <FontAwesomeIcon icon={faLock} />
+      </Button>
     </>
   );
 }

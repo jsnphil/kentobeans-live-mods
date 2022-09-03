@@ -11,7 +11,7 @@ function Navigation() {
 
   return (
     <>
-      <Navbar id='navbar' bg='dark' variant='dark'>
+      <Navbar id='navbar' expand='lg' bg='dark' variant='dark'>
         <Container id='navContainer'>
           <Navbar.Brand id='brandLogo' href='/'>
             <Image
@@ -20,8 +20,6 @@ function Navigation() {
               alt='Kentobeans Logo'
               width='30'
               height='30'
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />

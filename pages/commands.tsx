@@ -15,7 +15,8 @@ const Commands: NextPage = () => {
     <div className={styles.container}>
       <main>
         {' '}
-        <div className='container mb-5 d-flex aligns-items-center justify-content-center'>
+        <div className='container d-xl-none .d-xl-block'>Small Nav</div>
+        <div className='container d-none d-xl-block mb-5 d-flex aligns-items-center justify-content-center'>
           <div id='menuTop' className='innerContainer'>
             <button
               name='queueMgmtCmds'

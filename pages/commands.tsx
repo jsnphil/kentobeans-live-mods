@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
-import { MouseEvent, useState } from 'react';
-import { Row, Table } from 'react-bootstrap';
-import styles from '../styles/Home.module.css';
+import { useState } from 'react';
+import { Form } from 'react-bootstrap';
 import CommandTable from '../components/CommandTable';
 import QueueCommands from '../data/queueCommands.json';
 import BumpCommands from '../data/bumpCommands.json';
@@ -11,11 +10,27 @@ import BotCommands from '../data/botCommands.json';
 const Commands: NextPage = () => {
   const [commandState, setCommandState] = useState('queueMgmtCmds');
 
+  const handleMenuChange = async (event: any) => {
+    event.preventDefault();
+
+    setCommandState(event.target.value);
+  };
+
   return (
-    <div className={styles.container}>
+    <div>
       <main>
-        {' '}
-        <div className='container d-xl-none .d-xl-block'>Small Nav</div>
+        <div className='container d-xl-none d-xl-block mb-5 mt-5  aligns-items-center justify-content-center'>
+          <Form>
+            <Form.Group className='mb5' controlId='secondaryNavDropDown'>
+              <Form.Select id='secondaryNav' onChange={handleMenuChange}>
+                <option value='queueMgmtCmds'>Queue Management Commands</option>
+                <option value='bumpCmds'>Bump System Commands</option>
+                <option value='botCmds'>Bot Management Commands</option>
+                <option value='otherCmds'>Other Commands</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
+        </div>
         <div className='container d-none d-xl-block mb-5 d-flex aligns-items-center justify-content-center'>
           <div id='menuTop' className='innerContainer'>
             <button

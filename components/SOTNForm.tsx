@@ -1,35 +1,43 @@
 import React, { FormEvent } from 'react';
 import { Form, Row, Col, Button, InputGroup, Alert } from 'react-bootstrap';
 
+const kentobotApiEndpoint = '41omotk1zh.execute-api.us-east-1.amazonaws.com';
+
 export default function SOTNWinnerForm() {
   const [submitted, setSubmitted] = React.useState(false);
+  const [error, setError] = React.useState();
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const data = {
-      username: event.target.username.value,
-      date: event.target.streamDate.value,
-      youtubeId: event.target.youtubeId.value
-    };
+    const username = event.target.username.value;
+    const date = event.target.streamDate.value;
+    const youtubeId = event.target.youtubeId.value;
 
-    const endpoint = '/api/sotn';
+    const endpoint = `https://${kentobotApiEndpoint}/dev/song-requests/request/${youtubeId}?date=${date}&requester=${username}`;
 
     const options = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-Api-Key': '9kJYm9CU2k4Ra74btZsFt3uP7qY8gGtD3zuGA74z'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        sotnWinner: true,
+        featuredArtist: event.target.featuredArtist?.value,
+        songYear: event.target.songYear?.value
+      })
     };
 
     const response = await fetch(endpoint, options);
     const result = await response.json();
 
-    setSubmitted(true);
-
-    // alert(`SOTN submitted: ${result.data}`);
-    return result.data;
+    if (response.status != 200) {
+      setError(result.data);
+      return;
+    } else {
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -37,6 +45,11 @@ export default function SOTNWinnerForm() {
       {submitted && (
         <Alert key='success' variant='success'>
           Song of the Night Winner Saved!
+        </Alert>
+      )}
+      {error && (
+        <Alert key='error' variant='error'>
+          {error}
         </Alert>
       )}
       <Form onSubmit={handleSubmit}>

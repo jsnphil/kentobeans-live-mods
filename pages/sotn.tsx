@@ -1,18 +1,38 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
+import { Form } from 'react-bootstrap';
 
 import SOTNWinnerForm from '../components/SOTNForm';
 import SOTSSeasonForm from '../components/SOTSForm';
-import styles from '../styles/Home.module.css';
 
 const SOTN: NextPage = () => {
   const [formState, setFormState] = useState('sotnWinner');
 
+  const handleMenuChange = async (event: any) => {
+    event.preventDefault();
+
+    setFormState(event.target.value);
+  };
+
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <main>
-        {' '}
-        <div className='container mb-5 d-flex aligns-items-center justify-content-center'>
+        <div className='d-xl-none d-xl-block mb-5 mt-5 align-items-center justify-content-center'>
+          <Form>
+            <Form.Group className='mb5' controlId='secondaryNavDropDown'>
+              <Form.Select id='secondaryNav' onChange={handleMenuChange}>
+                <option value='sotnWinner'>
+                  Save Song of the Night Winner
+                </option>
+                <option value='sotsWinner'>
+                  Save Song of the Season Winner
+                </option>
+                <option value='seasonDates'>Configure Seasons</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
+        </div>
+        <div className='d-none d-xl-block mb-5 d-flex align-items-center justify-content-center'>
           <div id='menuTop' className='innerContainer'>
             <button
               name='sotnWinner'

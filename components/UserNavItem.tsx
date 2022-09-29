@@ -17,7 +17,7 @@ function UserNavItem() {
         </Navbar.Text>
         <Navbar.Text>
           {
-            <Button variant='secondary' onClick={() => signOut()}>
+            <Button variant='secondary' size='sm' onClick={() => signOut()}>
               Logout <FontAwesomeIcon icon={faUnlock} />
             </Button>
           }
@@ -28,7 +28,7 @@ function UserNavItem() {
 
   return (
     <>
-      <Button variant='secondary' onClick={() => signIn()}>
+      <Button variant='secondary' size='sm' onClick={() => signIn()}>
         {' '}
         Login <FontAwesomeIcon icon={faLock} />
       </Button>

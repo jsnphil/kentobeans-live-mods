@@ -71,18 +71,20 @@ export default function SOTNWinnerForm() {
           </Form.Group>
         </Row>
 
-        <Form.Label htmlFor='youtubeId'>YouTube ID</Form.Label>
-        <InputGroup as={Col}>
-          <InputGroup.Text id='youtubeIdGroup'>
-            https://www.youtube.com/watch?v=
-          </InputGroup.Text>
-          <Form.Control
-            id='youtubeId'
-            name='youtubeId'
-            aria-describedby='basic-addon3'
-            required
-          />
-        </InputGroup>
+        <Row className='mb-3'>
+          <Form.Label htmlFor='youtubeId'>YouTube ID</Form.Label>
+          <InputGroup as={Col}>
+            <InputGroup.Text id='youtubeIdGroup'>
+              https://www.youtube.com/watch?v=
+            </InputGroup.Text>
+            <Form.Control
+              id='youtubeId'
+              name='youtubeId'
+              aria-describedby='basic-addon3'
+              required
+            />
+          </InputGroup>
+        </Row>
 
         <Form.Group className='mb-3' controlId='formSongTitle'>
           <Form.Label>Song Title</Form.Label>

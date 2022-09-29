@@ -14,29 +14,31 @@ export default function SOTNWinnerForm() {
     const date = event.target.streamDate.value;
     const youtubeId = event.target.youtubeId.value;
 
-    const endpoint = `https://${kentobotApiEndpoint}/dev/song-requests/request/${youtubeId}?date=${date}&requester=${username}`;
-
     const options = {
-      method: 'PUT',
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'X-Api-Key': '9kJYm9CU2k4Ra74btZsFt3uP7qY8gGtD3zuGA74z'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        sotnWinner: true,
+        username: username,
+        date: event.target.streamDate.value,
+        youtubeId: event.target.youtubeId.value,
+        songTitle: event.target.songTitle.value,
+        artist: event.target.artist.value,
         featuredArtist: event.target.featuredArtist?.value,
         songYear: event.target.songYear?.value
       })
     };
 
-    const response = await fetch(endpoint, options);
+    const response = await fetch('/api/sotn', options);
     const result = await response.json();
 
     if (response.status != 200) {
-      setError(result.data);
-      return;
+      setSubmitted(false);
+      setError(result.errors[0]);
     } else {
       setSubmitted(true);
+      setError(undefined);
     }
   };
 
@@ -48,8 +50,8 @@ export default function SOTNWinnerForm() {
         </Alert>
       )}
       {error && (
-        <Alert key='error' variant='error'>
-          {error}
+        <Alert key='danger' variant='danger'>
+          Error saving Song of the Night Winner - {error}
         </Alert>
       )}
       <Form onSubmit={handleSubmit}>

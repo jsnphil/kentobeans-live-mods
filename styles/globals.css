@@ -28,16 +28,7 @@ html{overflow-y: scroll;}
     }
 }
 
-@font-face {
-	font-family: "MavenPro";
-	src: url("https://kentobeans.live/assets/fonts/MavenPro-Regular.ttf");
-}
 
-*{
-	font-family: "MavenPro", Helvetica, Arial;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 #menuTop{padding-top: 20px;}
 

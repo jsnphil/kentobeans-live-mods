@@ -15,7 +15,7 @@ body
 	padding: 0px;
 	background-color: #CCCCCC;
 	/* text-align: center; */
-	font: 13px Helvetica, Arial;
+	/* font: 13px Helvetica, Arial; */
 }
 
 html{overflow-y: scroll;}
@@ -71,7 +71,6 @@ html{overflow-y: scroll;}
 	width: 245px;
 	height: 32px;
 	line-height: 28px;
-	float: left;
 }
 
 .buttonMenu:hover{

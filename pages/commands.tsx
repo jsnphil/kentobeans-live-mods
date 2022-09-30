@@ -31,49 +31,51 @@ const Commands: NextPage = () => {
             </Form.Group>
           </Form>
         </div>
-        <div className='container d-none d-xl-block mb-5 d-flex aligns-items-center justify-content-center'>
-          <div id='menuTop' className='innerContainer'>
-            <button
-              name='queueMgmtCmds'
-              className={`button buttonMenu leftButtonA ${
-                commandState === 'queueMgmtCmds' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setCommandState('queueMgmtCmds');
-              }}
-            >
-              Queue Management
-            </button>
-            <button
-              className={`button buttonMenu midButton ${
-                commandState === 'bumpCmds' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setCommandState('bumpCmds');
-              }}
-            >
-              Bump System
-            </button>
-            <button
-              className={`button buttonMenu midButton ${
-                commandState === 'botCmds' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setCommandState('botCmds');
-              }}
-            >
-              Bot Management
-            </button>
-            <button
-              className={`button buttonMenu rightButtonA ${
-                commandState === 'otherCmds' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setCommandState('otherCmds');
-              }}
-            >
-              Other{' '}
-            </button>
+        <div className='d-none d-xl-block mb-5'>
+          <div className='container d-flex aligns-items-center justify-content-center'>
+            <div id='menuTop' className='innerContainer'>
+              <button
+                name='queueMgmtCmds'
+                className={`button buttonMenu leftButtonA ${
+                  commandState === 'queueMgmtCmds' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setCommandState('queueMgmtCmds');
+                }}
+              >
+                Queue Management
+              </button>
+              <button
+                className={`button buttonMenu midButton ${
+                  commandState === 'bumpCmds' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setCommandState('bumpCmds');
+                }}
+              >
+                Bump System
+              </button>
+              <button
+                className={`button buttonMenu midButton ${
+                  commandState === 'botCmds' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setCommandState('botCmds');
+                }}
+              >
+                Bot Management
+              </button>
+              <button
+                className={`button buttonMenu rightButtonA ${
+                  commandState === 'otherCmds' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setCommandState('otherCmds');
+                }}
+              >
+                Other{' '}
+              </button>
+            </div>
           </div>
         </div>
         {commandState === 'queueMgmtCmds' && (

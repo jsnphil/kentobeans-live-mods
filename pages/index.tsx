@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       {/* <main className={styles.main}> */}
       <main>
         <Row>
-          <div className='align-items-center justify-content-center mb-5'>
+          <div className='d-flex align-items-center justify-content-center mt-5 mb-5'>
             <Image
               id='kentobeansLogo'
               src={logo}

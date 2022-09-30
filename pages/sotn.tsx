@@ -32,43 +32,45 @@ const SOTN: NextPage = () => {
             </Form.Group>
           </Form>
         </div>
-        <div className='d-none d-xl-block mb-5 d-flex align-items-center justify-content-center'>
-          <div id='menuTop' className='innerContainer'>
-            <button
-              name='sotnWinner'
-              className={`button buttonMenu leftButtonA ${
-                formState === 'sotnWinner' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setFormState('sotnWinner');
-              }}
-            >
-              Save SOTN Winner{' '}
-            </button>
+        <div className='d-none d-xl-block mb-5'>
+          <div className='d-flex align-items-center justify-content-center'>
+            <div id='menuTop' className='innerContainer'>
+              <button
+                name='sotnWinner'
+                className={`button buttonMenu leftButtonA ${
+                  formState === 'sotnWinner' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setFormState('sotnWinner');
+                }}
+              >
+                Save SOTN Winner{' '}
+              </button>
 
-            <button
-              name='sotsWinner'
-              className={`button buttonMenu midButton ${
-                formState === 'sotsWinner' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setFormState('sotsWinner');
-              }}
-            >
-              Save SOTS Winner{' '}
-            </button>
+              <button
+                name='sotsWinner'
+                className={`button buttonMenu midButton ${
+                  formState === 'sotsWinner' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setFormState('sotsWinner');
+                }}
+              >
+                Save SOTS Winner{' '}
+              </button>
 
-            <button
-              name='sots'
-              className={`button buttonMenu rightButtonA ${
-                formState === 'seasonDates' ? 'selected' : ''
-              }`}
-              onClick={(e) => {
-                setFormState('seasonDates');
-              }}
-            >
-              Configure Seasons{' '}
-            </button>
+              <button
+                name='sots'
+                className={`button buttonMenu rightButtonA ${
+                  formState === 'seasonDates' ? 'selected' : ''
+                }`}
+                onClick={(e) => {
+                  setFormState('seasonDates');
+                }}
+              >
+                Configure Seasons{' '}
+              </button>
+            </div>
           </div>
         </div>
         {formState === 'sotnWinner' && <SOTNWinnerForm />}

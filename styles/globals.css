@@ -28,6 +28,12 @@ html{overflow-y: scroll;}
     }
 }
 
+*{
+	font-family: "Maven Pro", Helvetica, Arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 
 
 #menuTop{padding-top: 20px;}

@@ -32,13 +32,13 @@ function Navigation() {
               <Nav.Link href='sotn' id='sotnLink'>
                 Song of the Night
               </Nav.Link>
-              <Nav.Link href='#link' id='botControlsLink'>
+              <Nav.Link href='#link' id='botControlsLink' disabled>
                 Kentobot Controls
               </Nav.Link>
-              <Nav.Link href='#link' id='bumpsLink'>
+              <Nav.Link href='#link' id='bumpsLink' disabled>
                 Bumps
               </Nav.Link>
-              <NavDropdown title='Bean Rewards' id='rewardsDropdown'>
+              <NavDropdown title='Bean Rewards' id='rewardsDropdown' disabled>
                 <NavDropdown.Item id='livelearn' href='#action/3.1'>
                   Live Learn
                 </NavDropdown.Item>
